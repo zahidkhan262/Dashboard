@@ -1,0 +1,272 @@
+*{padding: 0; margin: 0; box-sizing: border-box ; font-family: radnika, sans-serif;}
+
+:root{
+    --main-color:#222a45;
+    --secondary-color:rgba(0, 129, 255, 0.85);
+    --white-color:#fff;
+    --black-color-1:#000;
+    --black-color-2:#111;
+    --gray-color:#f5f5f5;
+    --b-shadow:0 0 15px rgba(0,0,0,0.2);
+    --b-shadow-2:0 0 5px rgba(0,0,0,0.2);
+}
+body{overflow-x: hidden;}
+h2{font-size: 20px!important;}
+h3{font-size: 18px!important;}
+h4{font-size: 16px!important;}
+p{font-size: 13px!important;}
+a{text-decoration: none!important;}
+input,button{outline: none; border: none; padding: 8px 16px;}
+
+
+.d-flex-1{display: flex; justify-content: space-between; align-items: center;}
+.d-flex-2{display: flex; align-items: center;}
+.d-flex-3{display: flex; justify-content: space-around; align-items: center;}
+
+
+.containers{width: 100%; }
+.navs{
+    position: fixed;
+    width: 300px;
+    height: 100%;
+    background: var(--main-color);
+    border-left: 8px solid var(--secondary-color);
+    transition: width 0.4s;
+    overflow-x: hidden;
+    z-index: 111;
+}
+.full-header{width: 67px;}
+.navs::-webkit-scrollbar{width: 6px; height: 0px; overflow-y: hidden;}
+.navs:hover::-webkit-scrollbar-thumb{background: var(--secondary-color);}
+.navigation{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 0 10px;
+}
+.active{background: var(--white-color); color: var(--secondary-color);}
+
+.navigation li{
+    position: relative;
+    width: 300px;
+    border-radius: 20px 0 0 20px;
+    list-style: none;
+    margin: 10px 0;
+    
+}
+.navigation li:hover{
+    background: var(--white-color); 
+}
+.navigation li:nth-child(1){
+    margin-bottom: 30px;
+    background: none;
+}
+.profile{margin-top: 30px; color: var(--white-color);}
+.profile img{border-radius: 100%; width: 45px; height: 45px; border: 3px solid var(--secondary-color); margin-bottom: 20px;}
+.profile-name-title{padding-left: 15px; margin-top: -15px;}
+.navigation li a{
+    position: relative;
+    display: block;
+    width: 100%;
+    padding: 5px;
+    color: var(--secondary-color);
+}
+
+.navigation li a .icons{
+    position: relative;
+    padding-right: 20px;
+    font-size: 25px;
+    height: 50px;
+    line-height: 50px;
+}
+.navigation li a .name{
+    position: relative;
+    font-size: 18px;
+    height: 50px;
+    line-height: 50px;
+}
+/* end of side--navigation */
+.main-part{
+    position: absolute;
+    left: 300px;
+    width: calc(100% - 300px);
+    transition: left 0.4s;
+    overflow: auto;
+}
+.full-main{
+    width: calc(100% - 67px);
+    left: 67px;
+}
+
+header{
+    background: var(--white-color);
+    box-shadow: var(--b-shadow);
+    padding: 5px 20px;
+}
+.pro-logo img{width: 40px; height: 40px; border-radius: 100%; border: 2px solid var(--secondary-color);}
+.input{color: var(--white-black-1); border: 0.5px solid var(--gray-color); border-radius: 10px; position: relative; transition: 0.4s;}
+input::placeholder{text-align: center;}
+.input:hover{background: var(--main-color); color: var(--white-color); }
+.fa-bars, .fa-bell{font-size: 22px; color: var(--secondary-color); transition: 0.2s;}
+.fa-bars:hover{color: var(--main-color);}
+.fa-search{position: relative; left: 160px; top: 0; z-index: 11;color: var(--gray-color);}
+.fa-bell{padding-right: 15px; position: relative; }
+.fa-bell::after{
+    content: '';
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    background: var(--main-color);
+    border-radius: 100%;
+    top: -5px;
+    right: 10px;    
+}
+.pro-logo{position: relative;}
+
+.pro-logo .pro-card{
+    position: absolute;
+    top: 50px;
+    right: 40px;
+    width: 160px;
+    background: var(--white-color);
+    box-shadow: var(--b-shadow);
+    display: none;
+    z-index: 111;
+    transition: 0.4s;
+}
+.pro-card .pro-ul{
+    margin: 0;
+    padding: 20px;
+}
+.pro-card .pro-ul li{
+    list-style: none;
+    padding: 10px 0;
+    margin: 10px 0;
+}
+
+.pro-ul li a{
+    color: var(--black-color-1);
+}
+.pro-ul li a:hover{
+    color: var(--secondary-color);
+}
+.fa-sign-out{padding-left: 10px; color: var(--secondary-color);}
+
+
+
+
+/* cards */
+
+.col-3{
+    width: 25%;
+    padding: 10px;
+}
+.card-content{
+    background: var(--white-color);
+    box-shadow: var(--b-shadow-2);
+    padding: 40px 20px;
+    width: 100%;
+    border-radius: 20px;
+}
+.card-content:hover .number{
+    color: var(--secondary-color);
+}
+.card-content .cards-icons{
+    color: var(--secondary-color);
+    font-size: 28px;
+}
+/* middle */
+.middle{
+    width: 100%;
+    position: relative;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-gap: 20px;
+    margin-top: 10px;
+    padding: 20px;
+    flex-direction: column;
+}
+.table-header h2{
+    color: var(--secondary-color);
+}
+.table-header a{
+    color: var(--white-color);
+    background: var(--secondary-color);
+    font-size: 13px;
+    padding: 4px 8px;
+    border-radius: 6px;
+}
+
+.recent-order,.right-menu{
+    background: var(--white-color);
+    box-shadow: var(--b-shadow);  
+    border-radius: 10px;
+    padding: 10px;
+
+}
+.recent-order table{
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+    text-align: center;
+    scroll-behavior: smooth;
+   
+}
+.middle table thead th{
+    font-weight: bold;
+    padding: 20px 0;
+    border-bottom: 1px solid var(--gray-color);
+}
+
+.middle table tbody tr td{
+    padding: 20px 4px;
+    border-bottom: 1px solid var(--gray-color);
+}
+.middle table tbody tr td .delivered{
+    background: var(--secondary-color);
+    padding: 4px 10px;
+    color: var(--white-color);
+}
+.middle table tbody tr td .pending{
+    background: crimson;
+    padding: 4px 10px;
+    color: var(--white-color);
+}
+.middle table tbody tr td .return{
+    background: rgba(214, 214, 5, 0.986);
+    padding: 4px 10px;
+    color: var(--white-color);
+}
+.middle table tbody tr:hover{
+   background: var(--secondary-color);
+}
+
+/* right menu bar */
+
+.customer-profile table{
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+    text-align: center;
+    scroll-behavior: smooth;
+}
+.customer-profile table tr{
+    border-bottom: 1px solid var(--gray-color);
+}
+.customer-pro img{
+    width: 60px;
+    height: 60px;
+    border-radius: 100%;
+}
+.cutomer-details{
+    padding-left: 20px;
+}
+.cutomer-details p{text-align: left;}
+
+
+
+@media(max-width:776px){
+
+}
+
