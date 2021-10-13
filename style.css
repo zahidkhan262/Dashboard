@@ -105,8 +105,9 @@ header{
     padding: 5px 20px;
 }
 .pro-logo img{width: 40px; height: 40px; border-radius: 100%; border: 2px solid var(--secondary-color);}
-.input{color: var(--white-black-1); border: 0.5px solid var(--gray-color); border-radius: 10px; position: relative; transition: 0.4s;}
+.input{color: var(--white-black-1); border: 0.5px solid var(--gray-color); border-radius: 10px; position: relative; transition: 0.4s; width: 20vw;}
 input::placeholder{text-align: center;}
+.max-width{width: 40vw;}
 .input:hover{background: var(--main-color); color: var(--white-color); }
 .fa-bars, .fa-bell{font-size: 22px; color: var(--secondary-color); transition: 0.2s;}
 .fa-bars:hover{color: var(--main-color);}
@@ -117,7 +118,7 @@ input::placeholder{text-align: center;}
     position: absolute;
     width: 16px;
     height: 16px;
-    background: var(--main-color);
+    background: var(--secondary-color);
     border-radius: 100%;
     top: -5px;
     right: 10px;    

@@ -16,11 +16,17 @@ $(document).ready(function () {
         $('.navs').toggleClass('full-header');
     })
 
-
+    // input bar
+    $('.input').mouseover(function () {
+        $('.input').toggleClass('max-width')
+    })
+    $('.input').mouseout(function () {
+        $('.input').removeClass('max-width')
+    })
     // profile
 
     $('#profile').on('click', function () {
-        $('.pro-card').toggle()
+        $('.pro-card').toggle();
     })
 })
 $('.single-slick').slick();
