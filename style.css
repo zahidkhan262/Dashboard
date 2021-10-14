@@ -7,6 +7,7 @@
     --black-color-1:#000;
     --black-color-2:#111;
     --gray-color:#f5f5f5;
+    --gray-color-2:#cacaca;
     --b-shadow:0 0 15px rgba(0,0,0,0.2);
     --b-shadow-2:0 0 5px rgba(0,0,0,0.2);
 }
@@ -24,7 +25,20 @@ input,button{outline: none; border: none; padding: 8px 16px;}
 .d-flex-3{display: flex; justify-content: space-around; align-items: center;}
 
 
-.containers{width: 100%; }
+.containers{width: 100%;  }
+.containers-1{width: 80%;  margin: 30px auto; }
+
+.view-all:hover{background: crimson;}
+
+.fa-times-circle {
+    font-size: 25px;
+    background: var(--secondary-color);
+    color: var(--white-color);
+}
+.fa-arrow-right:hover{color: crimson;}
+.fa-times-circle:hover {color: crimson;}
+
+
 .navs{
     position: fixed;
     width: 300px;
@@ -65,6 +79,7 @@ input,button{outline: none; border: none; padding: 8px 16px;}
 .profile{margin-top: 30px; color: var(--white-color);}
 .profile img{border-radius: 100%; width: 45px; height: 45px; border: 3px solid var(--secondary-color); margin-bottom: 20px;}
 .profile-name-title{padding-left: 15px; margin-top: -15px;}
+.profile-name-title h4{color: var(--secondary-color);}
 .navigation li a{
     position: relative;
     display: block;
@@ -90,6 +105,7 @@ input,button{outline: none; border: none; padding: 8px 16px;}
 .main-part{
     position: absolute;
     left: 300px;
+    top: 60px;
     width: calc(100% - 300px);
     transition: left 0.4s;
     overflow: auto;
@@ -100,14 +116,19 @@ input,button{outline: none; border: none; padding: 8px 16px;}
 }
 
 header{
+    width: calc(100% - 300px);
+    position: absolute;
+    left: 300px;
     background: var(--white-color);
     box-shadow: var(--b-shadow);
     padding: 5px 20px;
+    z-index: 11;
 }
+.header-full{width: calc(100% - 67px); left: 67px;}
 .pro-logo img{width: 40px; height: 40px; border-radius: 100%; border: 2px solid var(--secondary-color);}
-.input{color: var(--white-black-1); border: 0.5px solid var(--gray-color); border-radius: 10px; position: relative; transition: 0.4s; width: 20vw;}
+.input{color: var(--white-black-1); border: 0.5px solid var(--gray-color); border-radius: 10px; position: relative; transition: 0.4s; width: 15vw;}
 input::placeholder{text-align: center;}
-.max-width{width: 40vw;}
+.max-width{width: 30vw;}
 .input:hover{background: var(--main-color); color: var(--white-color); }
 .fa-bars, .fa-bell{font-size: 22px; color: var(--secondary-color); transition: 0.2s;}
 .fa-bars:hover{color: var(--main-color);}
@@ -199,7 +220,7 @@ input::placeholder{text-align: center;}
     border-radius: 6px;
 }
 
-.recent-order,.right-menu{
+.recent-order, .right-menu{
     background: var(--white-color);
     box-shadow: var(--b-shadow);  
     border-radius: 10px;
@@ -214,33 +235,36 @@ input::placeholder{text-align: center;}
     scroll-behavior: smooth;
    
 }
-.middle table thead th{
+.recent-order table thead th{
     font-weight: bold;
     padding: 20px 0;
     border-bottom: 1px solid var(--gray-color);
 }
 
-.middle table tbody tr td{
+.recent-order table tbody tr td{
     padding: 20px 4px;
     border-bottom: 1px solid var(--gray-color);
 }
-.middle table tbody tr td .delivered{
+.recent-order table tbody tr td .delivered{
     background: var(--secondary-color);
     padding: 4px 10px;
     color: var(--white-color);
 }
-.middle table tbody tr td .pending{
+.recent-order table tbody tr td .pending{
     background: crimson;
     padding: 4px 10px;
     color: var(--white-color);
 }
-.middle table tbody tr td .return{
+.recent-order table tbody tr td .return{
     background: rgba(214, 214, 5, 0.986);
     padding: 4px 10px;
     color: var(--white-color);
 }
-.middle table tbody tr:hover{
-   background: var(--secondary-color);
+.recent-order table tbody tr:hover{
+   background: var(--gray-color-2);
+}
+.right-menu table tbody tr:hover{
+   background: var(--gray-color-2);
 }
 
 /* right menu bar */
@@ -255,6 +279,9 @@ input::placeholder{text-align: center;}
 .customer-profile table tr{
     border-bottom: 1px solid var(--gray-color);
 }
+.customer-profile table tr td{
+   padding: 20px 0;
+}
 .customer-pro img{
     width: 60px;
     height: 60px;
@@ -266,8 +293,78 @@ input::placeholder{text-align: center;}
 .cutomer-details p{text-align: left;}
 
 
+/* ----------------------------------contact us----------------------------- */
 
-@media(max-width:776px){
+
+
+
+.form-container{display: flex; justify-content: center; align-items: center; height: 100vh;}
+
+
+/* button */
+.btn{
+    display: inline-block;
+    background: var(--secondary-color);
+    color: var(--white-color);
+    padding: 10px 30px ;
+    margin: 20px 0;
+    transition: 0.3s ease-in;
+    cursor: pointer;
+}
+.btn:hover{
+    opacity: 0.8;
+}
+.contact-card{
+    position: relative;
+    width: 350px;
+    padding: 20px;
+    height: 450px;
+    background: var(--white-color);
+    box-shadow: 0 0 20px 0 rgba(0,0,0,0.2);
+    border-radius: 10px;
+    text-align: center;
+    overflow: hidden; 
+}
+.form-input{
+    border: 0.5px solid var(--gray-color);
+     margin: 10px auto;
+     padding: 8px 12px;
+     text-align: left;
+     background: transparent;
+ }
+
+.contact-card form{
+    position: absolute;
+    max-width: 350px;
+    transition: transform 0.5s;
+    padding: 40px 50px;
 
 }
+
+.form-btn{
+    display: inline-block;
+    padding: 20px 0;
+}
+.form-btn span{
+    font-weight: bold;
+    color: #555;
+    width: 100px;
+    display: inline-block;
+    padding: 0 10px;
+    cursor: pointer; 
+}
+
+
+#indicate{
+    position: relative;
+    width: 100px;
+    border: none;
+    background: var(--secondary-color);
+    height: 3px;
+    margin-top: 8px;
+    transform: translateX(100px);
+    transition: transform 1s;
+}
+#login-form{left: -350px;}
+#signup-form{left: 0px;}
 

@@ -1,17 +1,10 @@
-// $(document).ready(function () {
-//     var listing = $(".navigation li").click(function () {
-//         listing.forEach(element => {
-//             element.removeClass('active')
-//         });
-//         $(this).addClass('active')
-//     })
-// })
 $(document).ready(function () {
     $('.navigation li').click(function () {
         $('.navigation li').removeClass('active');
         $(this).addClass('active');
     })
     $('#bars-btn').on('click', function () {
+        $('header').toggleClass('header-full')
         $('.main-part').toggleClass('full-main');
         $('.navs').toggleClass('full-header');
     })
@@ -66,6 +59,12 @@ $('.cards-slick').slick({
     ]
 
 });
+
+
+
+
+
+
 
 
 

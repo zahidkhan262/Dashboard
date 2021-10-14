@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login||Register Swap || form</title>
+    <script src="https://kit.fontawesome.com/8b6c44059c.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="form-container">
+        <div class="contact-card">
+            <div class="d-flex-1">
+                <h3>DashBoard</h3>
+                <a href="index.html"><i class="fa fa-arrow-right"></i></a>
+            </div>
+            <div class="form-btn">
+                <span onclick="login()">Login</span>
+                <span onclick="signup()">Signup</span>
+                <hr id="indicate">
+            </div>
+            <form id="login-form">
+                <div class="form-input"><input type="text" placeholder="Username"></div>
+                <div class="form-input"><input type="password" placeholder="Password"></div>
+                <button type="button" class="btn">Sign In</button>
+            </form>
+            <form id="signup-form">
+                <div class="form-input"><input type="text" placeholder="Username"></div>
+                <div class="form-input"><input type="text" placeholder="Email"></div>
+                <div class="form-input"><input type="password" placeholder="Password"></div>
+                <button type="button" class="btn">Sign up</button>
+            </form>
+        </div>
+    </div>
+
+
+    <script>
+        let loginForm = document.getElementById('login-form')
+        let signUpForm = document.getElementById('signup-form')
+        let indicator = document.getElementById('indicate')
+        let bgChnage = document.querySelector('body');
+
+        function login() {
+            loginForm.style.transform = 'translateX(350px)';
+            signUpForm.style.transform = 'translateX(350px)';
+            indicator.style.transform = 'translateX(0px)';
+            bgChnage.style.background = '#222a45';
+        }
+        function signup() {
+            signUpForm.style.transform = 'translateX(0)';
+            loginForm.style.transform = 'translateX(0)';
+            indicator.style.transform = 'translateX(100px)';
+            bgChnage.style.background = '#222a45';
+
+        }
+    </script>
+
+</body>
+
+</html>
