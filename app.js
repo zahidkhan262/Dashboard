@@ -9,6 +9,8 @@ $(document).ready(function () {
         $('.navs').toggleClass('full-header');
     })
 
+
+
     // input bar
     $('.input').mouseover(function () {
         $('.input').toggleClass('max-width')
