@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <title>Dashboard</title>
 
     <!-- css -->
     <link rel="stylesheet" href="style.css">
@@ -22,7 +23,10 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
 
     <!-- <script src="app.js"></script> -->
-    <title>Dashboard</title>
+
+    <!-- chartjs -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
 </head>
 
 <body>
@@ -208,80 +212,31 @@
             <!-- right bar -->
             <div class="right-menu">
                 <div class="table-header">
-                    <h2>Recent Customers</h2>
+                    <h3>Recent Customers</h3>
                 </div>
                 <div class="customer-profile">
                     <table>
-                        <tbody>
-                            <tr>
-                                <td class="d-flex-2">
-                                    <span class="customer-pro"><img src="Zahidkhan.jpg" alt=""></span>
-                                    <span class="cutomer-details">
-                                        <h3>Zahid Khan</h3>
-                                        <p>Inida</p>
-                                    </span>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="d-flex-2">
-                                    <span class="customer-pro"><img src="Zahidkhan.jpg" alt=""></span>
-                                    <span class="cutomer-details">
-                                        <h3>Zahid Khan</h3>
-                                        <p>Inida</p>
-                                    </span>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="d-flex-2">
-                                    <span class="customer-pro"><img src="Zahidkhan.jpg" alt=""></span>
-                                    <span class="cutomer-details">
-                                        <h3>Zahid Khan</h3>
-                                        <p>Inida</p>
-                                    </span>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="d-flex-2">
-                                    <span class="customer-pro"><img src="Zahidkhan.jpg" alt=""></span>
-                                    <span class="cutomer-details">
-                                        <h3>Zahid Khan</h3>
-                                        <p>Inida</p>
-                                    </span>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="d-flex-2">
-                                    <span class="customer-pro"><img src="Zahidkhan.jpg" alt=""></span>
-                                    <span class="cutomer-details">
-                                        <h3>Zahid Khan</h3>
-                                        <p>Inida</p>
-                                    </span>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="d-flex-2">
-                                    <span class="customer-pro"><img src="Zahidkhan.jpg" alt=""></span>
-                                    <span class="cutomer-details">
-                                        <h3>Zahid Khan</h3>
-                                        <p>Inida</p>
-                                    </span>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="d-flex-2">
-                                    <span class="customer-pro"><img src="Zahidkhan.jpg" alt=""></span>
-                                    <span class="cutomer-details">
-                                        <h3>Zahid Khan</h3>
-                                        <p>Inida</p>
-                                    </span>
-                                </td>
-                            </tr>
+                        <tbody id="recent-customer">
                         </tbody>
                     </table>
                 </div>
             </div>
         </div>
+
+        <div class="container">
+            <div class="middle">
+                <div class="graph-box">
+                    <canvas id="myChart"></canvas>
+                </div>
+                <div class="graph-box">
+                    <canvas id="pieChart"></canvas>
+                </div>
+            </div>
+        </div>
+
     </div>
+
+
 
 
 

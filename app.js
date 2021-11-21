@@ -1,17 +1,17 @@
 let allData = [
-    { id: 1, status: "delivered", name: "zahid khan", address: "noida", salary: 15000, email: "zahiidkhan262@gmail.com" },
-    { id: 2, status: "pending", name: "arkan khan", address: "delhi", salary: 12000, email: "arknakhan262@gmail.com" },
-    { id: 3, status: "return", name: "aishwarya kurwade", address: "nagpur", salary: 20000, email: "aish8@gmail.com" },
-    { id: 4, status: "delivered", name: "mohd abuzar", address: "batla house", salary: 15000, email: "abuzar123@gmail.com" },
-    { id: 5, status: "pending", name: "tarun tomar", address: "gaziyabad", salary: 16000, email: "taruntomor@gmail.com" },
-    { id: 6, status: "delivered", name: "kapil tomar", address: "gaziyabad", salary: 15000, email: "kapiltomor@gmail.com" },
-    { id: 7, status: "return", name: "kapil chauhan", address: "gaziyabad", salary: 32000, email: "kpchauhan@gmail.com" },
-    { id: 8, status: "pending", name: "jamshed khan", address: "banaras", salary: 70000, email: "jamshed@gmail.com" },
-    { id: 9, status: "delivered", name: "juned ahmad", address: "pune", salary: 16000, email: "juned88@gmail.com" },
-    { id: 10, status: "return", name: "zeeshan", address: "bhadohi", salary: 35000, email: "zk12345@gmail.com" },
-    { id: 11, status: "pending", name: "amir khan", address: "mumbai", salary: 100000, email: "amirkhan2@gmail.com" },
-    { id: 12, status: "delivered", name: "sharukh khan", address: "mumbai", salary: 15000, email: "shahrukhkhan2@gmail.com" },
-    { id: 13, status: "return", name: "shakir hussain", address: "noida", salary: 55000, email: "shakir123@gmail.com" },
+    { id: 1, img_path: "Zahidkhan.jpg", status: "delivered", name: "zahid khan", address: "noida", salary: 15000, email: "zahiidkhan262@gmail.com" },
+    { id: 2, img_path: "Zahidkhan.jpg", status: "pending", name: "arkan khan", address: "delhi", salary: 12000, email: "arknakhan262@gmail.com" },
+    { id: 3, img_path: "Zahidkhan.jpg", status: "return", name: "aishwarya kurwade", address: "nagpur", salary: 20000, email: "aish8@gmail.com" },
+    { id: 4, img_path: "Zahidkhan.jpg", status: "delivered", name: "mohd abuzar", address: "batla house", salary: 15000, email: "abuzar123@gmail.com" },
+    { id: 5, img_path: "Zahidkhan.jpg", status: "pending", name: "tarun tomar", address: "gaziyabad", salary: 16000, email: "taruntomor@gmail.com" },
+    { id: 6, img_path: "Zahidkhan.jpg", status: "delivered", name: "kapil tomar", address: "gaziyabad", salary: 15000, email: "kapiltomor@gmail.com" },
+    { id: 7, img_path: "Zahidkhan.jpg", status: "return", name: "kapil chauhan", address: "gaziyabad", salary: 32000, email: "kpchauhan@gmail.com" },
+    { id: 8, img_path: "Zahidkhan.jpg", status: "pending", name: "jamshed khan", address: "banaras", salary: 70000, email: "jamshed@gmail.com" },
+    { id: 9, img_path: "Zahidkhan.jpg", status: "delivered", name: "juned ahmad", address: "pune", salary: 16000, email: "juned88@gmail.com" },
+    { id: 10, img_path: "Zahidkhan.jpg", status: "return", name: "zeeshan", address: "bhadohi", salary: 35000, email: "zk12345@gmail.com" },
+    { id: 11, img_path: "Zahidkhan.jpg", status: "pending", name: "amir khan", address: "mumbai", salary: 100000, email: "amirkhan2@gmail.com" },
+    { id: 12, img_path: "Zahidkhan.jpg", status: "delivered", name: "sharukh khan", address: "mumbai", salary: 15000, email: "shahrukhkhan2@gmail.com" },
+    { id: 13, img_path: "Zahidkhan.jpg", status: "return", name: "shakir hussain", address: "noida", salary: 55000, email: "shakir123@gmail.com" },
 ]
 
 
@@ -32,6 +32,25 @@ function showData() {
               `
     })
     document.getElementById('bind').innerHTML = tbl
+
+    // show Recent Data
+
+    recentTable = ""
+    allData.forEach((ele) => {
+
+        recentTable += `
+        <tr>
+                <td class="d-flex-2">
+                    <span class="customer-pro"><img src="${ele.img_path}" alt=""></span>
+                    <span class="cutomer-details">
+                        <h4>${ele.name}</h4>
+                        <p>${ele.address}</p>
+                    </span>
+                </td>
+        </tr>
+        `
+    })
+    document.getElementById('recent-customer').innerHTML = recentTable
 }
 
 showData();
@@ -41,7 +60,7 @@ document.getElementById('search').onkeyup = function () {
     searchValue = this.value;
 
     var filterData = allData.filter((ele) => {
-        if (ele.name.startsWith(searchValue) || ele.address.startsWith(searchValue) || ele.email.startsWith(searchValue)) {
+        if (ele.name.toLowerCase().match(searchValue.toLowerCase()) || ele.address.toLowerCase().match(searchValue.toLowerCase()) || ele.email.toLowerCase().match(searchValue.toLowerCase())) {
             return ele;
         }
         // console.log(ele)
@@ -297,6 +316,47 @@ $('.cards-slick').slick({
     ]
 
 });
+
+// graph chart
+
+
+const ctx = document.getElementById('myChart').getContext('2d');
+const myChart = new Chart(ctx, {
+    type: 'bar',
+    data: {
+        labels: ['Zahid', 'Shakir', 'Tarun', 'Abuzar', 'Aishwarya', 'Juned'],
+        datasets: [{
+            label: 'more of Votes',
+            data: [12, 19, 6, 5, 9, 3],
+            backgroundColor: [
+                'rgba(255, 9,  12,0.7)',
+                'rgb(54, 162,  135)',
+                'rgb(255, 206, 186)',
+                'rgb(75, 192,  192)',
+                'rgb(153, 102, 125)',
+                'rgb(255, 159, 164)'
+            ]
+        }]
+    }
+})
+const vgx = document.getElementById('pieChart').getContext('2d');
+const chart = new Chart(vgx, {
+    type: 'pie',
+    data: {
+        labels: ['Zahid', 'Shakir', 'Tarun'],
+        datasets: [{
+            label: 'more of Votes',
+            data: [12, 19, 6,],
+            backgroundColor: [
+                'rgba(255, 9,  12,0.7)',
+                'rgb(75, 192,  192)',
+                'rgb(255, 159, 164)'
+            ]
+        }]
+    }
+})
+
+
 
 
 
