@@ -76,18 +76,6 @@
                         <span class="name">Contact Us</span>
                     </a>
                 </li>
-                <li>
-                    <a href="#">
-                        <span class="icons"><i class="fa fa-forward"></i></span>
-                        <span class="name">Contact Us</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <span class="icons"><i class="fa fa-forward"></i></span>
-                        <span class="name">Contact Us</span>
-                    </a>
-                </li>
             </ul>
         </nav>
     </div>
@@ -101,6 +89,7 @@
         </div>
         <div class="bars-btn">
             <input type="text" placeholder="Search" class="input">
+            <i class="fa fa-search" aria-hidden="true"></i>
         </div>
         <div class="d-flex-2">
             <i class="fa fa-bell"></i>
@@ -196,76 +185,22 @@
             <div class="recent-order">
                 <div class="table-header d-flex-1">
                     <h2>Recent Orders</h2>
+                    <div class="bars-btn">
+                        <input type="text" placeholder="search" class="input2" id="search">
+                    </div>
                     <a href="index1.html" class="view-all">View All</a>
                 </div>
                 <table>
                     <thead>
-                        <th>Name</th>
-                        <th>Price</th>
-                        <th>Payment</th>
+                        <th title="descending">Id <i class="fa fa-angle-down" onclick="idSort()" aria-hidden="true"></i>
+                        </th>
+                        <th>Name <i class="fa fa-angle-down" onclick="nameSort()" aria-hidden="true"></i></th>
+                        <th>Address <i class="fa fa-angle-down" onclick="addressSort()" aria-hidden="true"></i></th>
+                        <th>Salary <i class="fa fa-angle-down" onclick="salSort()" aria-hidden="true"></i></th>
+                        <th>Email Id</th>
                         <th>Status</th>
                     </thead>
-                    <tbody>
-                        <tr>
-                            <td>zahid khan</td>
-                            <td>12000.00</td>
-                            <td>$2000.00</td>
-                            <td><span class="delivered">Delivered</span></td>
-                        </tr>
-                        <tr>
-                            <td>zahid khan</td>
-                            <td>12000.00</td>
-                            <td>$2000.00</td>
-                            <td><span class="pending">Pending</span></td>
-                        </tr>
-                        <tr>
-                            <td>zahid khan</td>
-                            <td>12000.00</td>
-                            <td>$2000.00</td>
-                            <td><span class="delivered">Delivered</span></td>
-                        </tr>
-                        <tr>
-                            <td>zahid khan</td>
-                            <td>12000.00</td>
-                            <td>$2000.00</td>
-                            <td><span class="pending">Pending</span></td>
-                        </tr>
-                        <tr>
-                            <td>zahid khan</td>
-                            <td>12000.00</td>
-                            <td>$2000.00</td>
-                            <td><span class="return">Return</span></td>
-                        </tr>
-                        <tr>
-                            <td>zahid khan</td>
-                            <td>12000.00</td>
-                            <td>$2000.00</td>
-                            <td><span class="delivered">Delivered</span></td>
-                        </tr>
-                        <tr>
-                            <td>zahid khan</td>
-                            <td>12000.00</td>
-                            <td>$2000.00</td>
-                            <td><span class="delivered">Delivered</span></td>
-                        </tr>
-                        <tr>
-                            <td>zahid khan</td>
-                            <td>12000.00</td>
-                            <td>$2000.00</td>
-                            <td><span class="return">Return</span></td>
-                        </tr>
-                        <tr>
-                            <td>zahid khan</td>
-                            <td>12000.00</td>
-                            <td>$2000.00</td>
-                            <td><span class="return">Return</span></td>
-                        </tr>
-                        <tr>
-                            <td>zahid khan</td>
-                            <td>12000.00</td>
-                            <td>$2000.00</td>
-                            <td><span class="delivered">Delivered</span></td>
-                        </tr>
+                    <tbody id="bind">
                     </tbody>
                 </table>
             </div>
