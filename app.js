@@ -158,7 +158,7 @@ function idSort() {
     allData.forEach((items) => {
 
         tbl += `
-                <tr>
+                <tr class="pad">
                         <td>${items.id}</td>
                         <td>${items.name}</td>
                         <td>${items.address}</td>
@@ -199,22 +199,7 @@ function salSort() {
 
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+//  toggle
 
 
 
@@ -254,11 +239,11 @@ $(document).ready(function () {
     $('#profile').on('click', function () {
         if (a == 0) {
 
-            $('.pro-card').slideDown(300);
+            $('.pro-card').slideDown(200);
             a = 1
         } else if (a == 1) {
 
-            $('.pro-card').slideUp(500);
+            $('.pro-card').slideUp(300);
             a = 0
         }
     })
@@ -273,49 +258,30 @@ $(document).ready(function () {
 
 
 
+$(document).ready(function () {
+    $(".open-dropdwon").click(function () {
+        $(this).next(".sub-menu").slideToggle();
+    })
+    $(".item").click(function () {
+        var x = $(this).html()
+        $("#list-value").html(x)
+    })
+    $(".filter-box").click(function () {
+        $(".list-item").slideToggle();
+    })
 
+
+
+
+})
 
 
 
 
 // jquery plugins
 $('.single-slick').slick();
-// slick slider department
 
-$('.cards-slick').slick({
-    dots: false,
-    infinite: false,
-    speed: 300,
-    arrows: false,
-    slidesToShow: 4,
-    slidesToScroll: 4,
-    responsive: [
-        {
-            breakpoint: 1024,
-            settings: {
-                slidesToShow: 3,
-                slidesToScroll: 3,
-                infinite: true,
-                dots: false
-            }
-        },
-        {
-            breakpoint: 600,
-            settings: {
-                slidesToShow: 1,
-                slidesToScroll: 1
-            }
-        },
-        {
-            breakpoint: 480,
-            settings: {
-                slidesToShow: 1,
-                slidesToScroll: 1
-            }
-        }
-    ]
 
-});
 
 // graph chart
 
