@@ -76,6 +76,26 @@ i{cursor: pointer;}
     margin-bottom: 30px;
     background: none;
 }
+/* drop-down */
+.fa-angle-right{
+    padding-left: 20px;
+    color: var(--gray-color);
+}
+.drop-down:hover .fa-angle-right{
+    color: var(--black-color-1);
+}
+
+.drop-down{
+    position: relative;
+    width: 100%;
+}
+.sub-menu{
+    background: var(--black-color-2);
+    display: none;
+}
+
+
+
 .profile{color: var(--white-color);border-bottom: 1px solid var(--gray-color);}
 .profile img{border-radius: 100%; width: 45px; height: 45px; border: 3px solid var(--secondary-color); margin-bottom: 20px;}
 .profile-name-title{padding-left: 15px; margin-top: -15px;}
