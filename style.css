@@ -90,8 +90,10 @@ i{cursor: pointer;}
     width: 100%;
 }
 .sub-menu{
-    background: var(--black-color-2);
-    display: none;
+    /* display: none; */
+}
+.drop-down:hover .sub-menu{
+    display: block;
 }
 
 
