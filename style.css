@@ -2,6 +2,7 @@
 
 :root{
     --main-color:#222a45;
+    --main-color-2:#222a45d5;
     --secondary-color:rgba(0, 129, 255, 0.85);
     --white-color:#fff;
     --black-color-1:#000;
@@ -88,12 +89,19 @@ i{cursor: pointer;}
 .drop-down{
     position: relative;
     width: 100%;
+    transition: 0.4s;
 }
 .sub-menu{
-    /* display: none; */
+  position: relative;
+  display: none;
+  margin-top: 10px;
+  border-top: 1px solid #000;
+  background: var(--main-color-2);
+  padding: 10px 20px;
 }
-.drop-down:hover .sub-menu{
-    display: block;
+
+.sub-menu a:hover{
+    color: var(--white-color);
 }
 
 
@@ -229,19 +237,17 @@ header{
     font-size: 28px;
 }
 
-/* selection */
+/* selection fieldset */
 
 .dashbord{
     margin: 20px 0;
     padding:15px; 
 }
-.left-box{width:45%;}
-fieldset{padding:10px 5px!important;}
-.left-box legend{font-size:12px; padding:0px 2px; margin-left:3px;}
+fieldset{padding:10px 5px!important; position: relative;}
 
-.filter-box{width:48%;}
-.list-item{background-color: white;width:100%; display: none;}
-.list-item .item{padding:10px;}
+
+.list-item{display: none; position: absolute; background: var(--main-color-2); color: var(--white-color); }
+.list-item .item{padding:10px; list-style: none;}
 .list-item .item:hover{background-color: skyblue;}
 
 /* table-section */

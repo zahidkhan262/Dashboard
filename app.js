@@ -259,18 +259,27 @@ $(document).ready(function () {
 
 
 $(document).ready(function () {
-    $(".open-dropdwon").click(function () {
-        $(this).next(".sub-menu").slideToggle();
-    })
+
     $(".item").click(function () {
         var x = $(this).html()
         $("#list-value").html(x)
     })
-    $(".filter-box").click(function () {
-        $(".list-item").slideToggle();
+    // selectName
+    $("#selectName").click(function () {
+        $(".openName").slideToggle();
+    })
+    // selectValue
+    $("#selectValue").click(function () {
+        $(".openValue").slideToggle();
     })
 
 
+
+    // dropdown
+
+    $("#list-menu").click(function () {
+        $(this).next(".sub-menu").slideToggle()
+    })
 
 
 })
