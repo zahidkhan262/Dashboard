@@ -2,7 +2,7 @@
 
 :root{
     --main-color:#222a45;
-    --main-color-2:#222a45d5;
+    --main-color-2:#13182be8;
     --secondary-color:rgba(0, 129, 255, 0.85);
     --white-color:#fff;
     --black-color-1:#000;
@@ -243,12 +243,26 @@ header{
     margin: 20px 0;
     padding:15px; 
 }
-fieldset{padding:10px 5px!important; position: relative;}
+
+fieldset{padding:5px!important; position: relative;}
 
 
-.list-item{display: none; position: absolute; background: var(--main-color-2); color: var(--white-color); }
-.list-item .item{padding:10px; list-style: none;}
-.list-item .item:hover{background-color: skyblue;}
+
+.list-item{
+    width: 100%;
+    position: absolute;   
+    padding: 0 20px;
+    display: none; 
+    background: var(--main-color-2); 
+    color: var(--white-color); 
+}
+.item{
+    width: 100%;
+    list-style: none;
+}
+.item:hover{
+    background-color: skyblue;
+}
 
 /* table-section */
 .table-section{
